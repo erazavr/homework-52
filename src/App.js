@@ -16,7 +16,6 @@ class App extends Component {
             arr.push(number);
             i++
         }
-
     }
     arr.sort(function (a,b) {
         return a - b
@@ -24,25 +23,11 @@ class App extends Component {
       this.setState({
           numbers: arr
       });
-      // for ( let i = 0; i < arr.length; i++){
-      //     for (let j = 0; j < arr.length; j++){
-      //         if (arr[i] < arr[j]){
-      //             var bols = arr[i];
-      //             arr [i] = arr [j];
-      //             arr [j] = bols;}
-      //
-      //     }
-      //
-      // }
-
-
-
   }
 
 
   render() {
     return (
-
       <div className='main'>
         <button className = 'btn' onClick = {this.generatorNumber}>New numbers</button>
         <div>
@@ -51,7 +36,6 @@ class App extends Component {
         <Circle num = {this.state.numbers[2]}/>
         <Circle num = {this.state.numbers[3]}/>
         <Circle num = {this.state.numbers[4]}/>
-
         </div>
       </div>
     )

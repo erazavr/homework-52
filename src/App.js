@@ -8,27 +8,32 @@ class App extends Component {
   };
   generatorNumber = () => {
     let arr = [];
-    for (let i = 0; i < 5;i++){
+    for (let i = 0; i < 5;){
         const number = Math.floor(Math.random() * (36 - 5 + 1)) + 5;
-        if (arr[i] === number) {
-            continue
+        if (arr.includes(number)) {
+            continue;
         } else {
-            arr.push(number)
+            arr.push(number);
+            i++
         }
-        this.setState({
-            numbers: arr
-        });
+
     }
-      for ( let i = 0; i < arr.length; i++){
-          for (let j = 0; j < arr.length; j++){
-              if (arr[i] < arr[j]){
-                  var bols = arr[i];
-                  arr [i] = arr [j];
-                  arr [j] = bols;}
-
-          }
-
-      }
+    arr.sort(function (a,b) {
+        return a - b
+    })
+      this.setState({
+          numbers: arr
+      });
+      // for ( let i = 0; i < arr.length; i++){
+      //     for (let j = 0; j < arr.length; j++){
+      //         if (arr[i] < arr[j]){
+      //             var bols = arr[i];
+      //             arr [i] = arr [j];
+      //             arr [j] = bols;}
+      //
+      //     }
+      //
+      // }
 
 
 
